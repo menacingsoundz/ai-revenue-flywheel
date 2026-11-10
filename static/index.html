@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Revenue Flywheel</title><link rel="stylesheet" href="style.css"></head>
+<body><header><h1>🌀 AI Revenue Flywheel</h1><p id="mode">Loading…</p></header>
+<nav id="tabs">
+<button data-tab="dash" class="on">Dashboard</button><button data-tab="agents">Agents</button>
+<button data-tab="products">Products</button><button data-tab="marketing">Marketing</button>
+<button data-tab="finance">Finance</button><button data-tab="approvals">Approvals <span id="apprCount"></span></button>
+<button data-tab="settings">Settings</button></nav>
+<main>
+<section id="tab-dash" class="tab on"><div id="cards" class="cards"></div>
+<h2>Recent activity</h2><div id="activity"></div><h2>Recent errors</h2><div id="errors"></div></section>
+<section id="tab-agents" class="tab"><div id="agents"></div><h2>Run a scheduled job</h2><div id="jobs"></div></section>
+<section id="tab-products" class="tab"><div id="products"></div>
+<h2>Add a product idea</h2><form id="newProduct"><input name="title" placeholder="Product title" required>
+<input name="description" placeholder="Description (40+ chars)" required>
+<input name="price_cents" type="number" placeholder="Price in cents, e.g. 1200" required>
+<button>Add product (draft)</button></form></section>
+<section id="tab-marketing" class="tab"><button id="genMarketing">Generate marketing drafts</button><div id="drafts"></div><h2>Publishing queue</h2><div id="queue"></div></section>
+<section id="tab-finance" class="tab"><div id="finSummary"></div>
+<h2>Record a TEST order</h2><form id="testOrder"><input name="product_slug" placeholder="product slug" required>
+<input name="amount_cents" type="number" placeholder="amount cents" required>
+<input name="fee_cents" type="number" placeholder="fee cents" value="0"><button>Record TEST order</button></form>
+<h2>Orders (real only shown in totals)</h2><div id="orders"></div></section>
+<section id="tab-approvals" class="tab"><div id="approvals"></div></section>
+<section id="tab-settings" class="tab"><div id="settings"></div>
+<h2>Admin login</h2><form id="loginForm"><input name="password" type="password" placeholder="Admin password (if set on server)"><button>Log in</button></form>
+<p class="note">Secrets (Gemini / OpenAI / Gumroad keys, admin password) are set as server environment variables only — never typed into this dashboard and never shown here.</p></section>
+</main><script src="app.js"></script></body></html>
